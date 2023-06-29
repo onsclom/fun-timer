@@ -45,7 +45,7 @@ justify-content: center; align-items: center; gap: 1rem"
 >
 	{#if running}
 		<!-- playing view -->
-		<div style="font-size: 3rem">
+		<div style="font-size: 2rem">
 			{minute}:{pad(second)}.{pad(Math.floor((remainingTime % 1) * 100))}
 		</div>
 
@@ -71,7 +71,7 @@ justify-content: center; align-items: center; gap: 1rem"
 					s
 				</label>
 			</div>
-			<input type="submit" style="width: 4rem" value="start" />
+			<input type="submit" value="start" />
 		</form>
 	{/if}
 </div>
