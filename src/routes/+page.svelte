@@ -35,8 +35,6 @@
 
 	function reset() {
 		running = false;
-		minute = 10;
-		second = 0;
 		cancelAnimationFrame(raf);
 	}
 </script>
@@ -55,7 +53,7 @@ justify-content: center; align-items: center; gap: 1rem"
 			<button on:click={() => (paused = !paused)} disabled={remainingTime === 0}
 				>{paused ? 'resume' : 'pause'}</button
 			>
-			<button on:click={reset}>reset</button>
+			<button on:click={reset}>edit</button>
 		</div>
 	{:else}
 		<!-- setup view -->
