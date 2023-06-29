@@ -6,9 +6,11 @@
 	let remainingTime = 0;
 	let raf: number;
 	let paused = false;
+	let totalTime = 0;
 
 	function startTimer() {
 		remainingTime = minute * 60 + second;
+		totalTime = remainingTime;
 		lastTime = performance.now();
 		running = true;
 		raf = requestAnimationFrame(timerLoop);
@@ -44,6 +46,7 @@
 justify-content: center; align-items: center; gap: 1rem"
 >
 	{#if running}
+		<progress value={totalTime - remainingTime} max={totalTime} />
 		<!-- playing view -->
 		<div style="font-size: 2rem">
 			{minute}:{pad(second)}.{pad(Math.floor((remainingTime % 1) * 100))}
